@@ -1,0 +1,167 @@
+/**
+ * Overrides and custom styles for Buckeye Interactive
+ *
+ * @package Reveal.js
+ * @subpackage Buckeye Interactive Theme
+ * @author Buckeye Interactive
+ */
+
+// Paths
+$fontPath: '../../bower_components/buckii-reveal-theme/assets/fonts';
+
+// Primary/body text
+$mainFont: 'Eau Sans', sans-serif;
+$mainFontSize: 36px;
+$mainColor: #d1d1d1;
+
+// Headings
+$headingFont: 'Museo Sans', Impact, sans-serif;
+$headingColor: #fff;
+$headingLineHeight: 1em;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$heading1TextShadow: none;
+
+// Links and actions
+$linkColor: #b13130;
+$linkColorHover: #912928;
+
+// Text selection
+$selectionBackgroundColor: #b13130;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+  background: $backgroundColor;
+}
+
+/** Web fonts */
+
+// Eau Sans
+@font-face {
+  font-family: 'Eau Sans';
+  src: url('#{$fontPath}/eau_sans_book-webfont.eot');
+  src: url('#{$fontPath}/eau_sans_book-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}/eau_sans_book-webfont.woff') format('woff'),
+       url('#{$fontPath}/eau_sans_book-webfont.ttf') format('truetype'),
+       url('#{$fontPath}/eau_sans_book-webfont.svg#eausans_book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eau Sans';
+  src: url('#{$fontPath}/eau_sans_bold-webfont.eot');
+  src: url('#{$fontPath}/eau_sans_bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}/eau_sans_bold-webfont.woff') format('woff'),
+       url('#{$fontPath}/eau_sans_bold-webfont.ttf') format('truetype'),
+       url('#{$fontPath}/eau_sans_bold-webfont.svg#eausans_bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eau Sans';
+  src: url('#{$fontPath}/eau_sans_book_obl-webfont.eot');
+  src: url('#{$fontPath}/eau_sans_book_obl-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}/eau_sans_book_obl-webfont.woff') format('woff'),
+       url('#{$fontPath}/eau_sans_book_obl-webfont.ttf') format('truetype'),
+       url('#{$fontPath}/eau_sans_book_obl-webfont.svg#eausans_book_oblique') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Eau Sans';
+  src: url('#{$fontPath}/eau_sans_bold_obl-webfont.eot');
+  src: url('#{$fontPath}/eau_sans_bold_obl-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}/eau_sans_bold_obl-webfont.woff') format('woff'),
+       url('#{$fontPath}/eau_sans_bold_obl-webfont.ttf') format('truetype'),
+       url('#{$fontPath}/eau_sans_bold_obl-webfont.svg#eausans_bold_oblique') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Museo Sans
+@font-face {
+  font-family: 'Museo Sans';
+  src: url('#{$fontPath}/MuseoSans_500-webfont.eot');
+  src: url('#{$fontPath}/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fontPath}/MuseoSans_500-webfont.woff') format('woff'),
+       url('#{$fontPath}/MuseoSans_500-webfont.ttf') format('truetype'),
+       url('#{$fontPath}/MuseoSans_500-webfont.svg#museo_sans_500regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/** Style additions/overrides */
+.reveal {
+  min-height: 100%;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+
+  h1 {
+    color: $linkColor;
+    font-size: 2.8em;
+  }
+
+  blockquote {
+    padding: .5em;
+    p.cite {
+      display: block;
+      text-align: right;
+      font-size: .8em;
+      &:before {
+        content: '\2013\00a0';
+      }
+    }
+  }
+
+  .controls {
+    div.navigate-left {
+      &, &.enabled {
+        border-right-color: #fff;
+      }
+    }
+    div.navigate-right {
+      &, &.enabled {
+        border-left-color: #fff;
+      }
+    }
+    div.navigate-up {
+      &, &.enabled {
+        border-bottom-color: #fff;
+      }
+    }
+    div.navigate-down {
+      &, &.enabled {
+        border-top-color: #fff;
+      }
+    }
+  }
+}
+
+.slides {
+  ul, ol, p {
+    display: block;
+    margin-bottom: 1em;
+    text-align: left;
+    line-height: 1.5em;
+  }
+  ul, ol {
+    ul, ol {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#global-footer {
+  position: absolute;
+  bottom: .5em;
+  left: .5em;
+  z-index: 1000;
+  img {
+    padding: .25em;
+  }
+}
